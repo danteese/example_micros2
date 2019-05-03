@@ -12,6 +12,7 @@ config_schema:
   - ["i2c.enable", true]
 
 tags:
+  - wifi
   - js
 
 filesystem:
@@ -20,3 +21,4 @@ filesystem:
 libs:
   - origin: https://github.com/mongoose-os-libs/boards
   - origin: https://github.com/mongoose-os-libs/js-demo-bundle
+  - origin: https://github.com/mongoose-os-libs/wifi
