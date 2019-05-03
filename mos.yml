@@ -8,8 +8,11 @@ modules_version: ${mos.version}
 mongoose_os_version: ${mos.version}
 
 config_schema:
-  - ["mqtt.server", "iot.eclipse.org:1883"]
-  - ["i2c.enable", true]
+  - ["wifi.sta.enable", true]
+  - ["wifi.ap.enable", true]
+  - ["wifi.ap.ssid", "SSIDPREFIX_??????"]
+  - ["wifi.ap.pass", "YOURPWD"]
+  - ["wifi.ap.hostname", "configure.yourdomain.com"]
 
 tags:
   - wifi
