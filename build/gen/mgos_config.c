@@ -1,7 +1,7 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/fw/tools/gen_sys_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_046401972/build/gen/ /mongoose-os/fw/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_046401972/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/fw/tools/gen_sys_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_436179679/build/gen/ /mongoose-os/fw/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_436179679/build/gen/mos_conf_schema.yml
  */
 
 #include <stddef.h>

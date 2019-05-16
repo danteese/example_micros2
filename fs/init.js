@@ -113,26 +113,38 @@ Timer.set(10000 /* 1 sec */, true /* repeat */, function() {
     let ok = MQTT.pub(topic, message, 2);
     print('Published:', ok ? 'yes' : 'no', 'topic:', topic, 'message:', message);
   }
+  
+  Sys.usleep(1 * 1000);
 
   if (m === 0) {
     m = dt2.getDeviceCount();
     print('Sensors found:', m);
 
-      sens2[0] = '01234567';
-      if (dt.getAddress(sens2[0], 0) === 1) {
-        print('Sensor#', 0, 'address:', dt2.toHexStr(sens2[0]));
+      // sens2[0] = '01234567';
+      // if (dt.getAddress(sens2[0], 0) === 1) {
+      //   print('Sensor#', 0, 'address:', dt2.toHexStr(sens2[0]));
+      //   print(JSON.stringify(sens2));
+      //   print(dt2.getTempC(sens2[0]));
+      // }
+
+      for (let i = 0; i < m; i++) {
+        sens2[i] = '0123456789';
+        if (dt.getAddress(sens2[i], i) === 1) {
+          print('Sensor#', i, 'address:', dt.toHexStr(sens2[i]));
+        }
       }
   
   }
 
   dt2.requestTemperatures();
+  for (let i = 0; i < m; i++) {
     topic = "/ibero/02/";
-    print('Sensor#', 0, 'Temperature:', dt2.getTempC(sens2[0]), '*C');
+    print('Sensor#', 0, 'Temperature:', dt2.getTempC(sens2[i]), '*C');
     topic = topic+'TE_18B20_'+JSON.stringify(pin2)+'_'+JSON.stringify(0);
-    message = JSON.stringify(dt2.getTempC(sens2[0]));
+    message = JSON.stringify(dt2.getTempC(sens2[i]));
     let ok = MQTT.pub(topic, message, 2);
     print('Published:', ok ? 'yes' : 'no', 'topic:', topic, 'message:', message);
-
+  }
   let t = dht.getTemp();
   let h = dht.getHumidity();
 
@@ -169,6 +181,7 @@ Timer.set(10000 /* 1 sec */, true /* repeat */, function() {
   let ok = MQTT.pub(topic, message, 2);
   print('Published:', ok ? 'yes' : 'no', 'topic:', topic, 'message:', message);
 
+  n = 0, m = 0;
 }, null);
 
 function constrain(x,a,b) {
