@@ -1,14 +1,14 @@
 /* clang-format off */
 /*
  * Generated file - do not edit.
- * Command: /mongoose-os/fw/tools/gen_sys_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_902459988/build/gen/ /mongoose-os/fw/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_902459988/build/gen/mos_conf_schema.yml
+ * Command: /mongoose-os/fw/tools/gen_sys_config.py --c_name=mgos_config --c_global_name=mgos_sys_config --dest_dir=/data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_046401972/build/gen/ /mongoose-os/fw/src/mgos_debug_udp_config.yaml /data/fwbuild-volumes/2.13.0/apps/app1/esp8266/build_contexts/build_ctx_046401972/build/gen/mos_conf_schema.yml
  */
 
 #include <stddef.h>
 #include "mgos_config.h"
 
-const struct mgos_conf_entry mgos_config_schema_[290] = {
-  {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 289},
+const struct mgos_conf_entry mgos_config_schema_[212] = {
+  {.type = CONF_TYPE_OBJECT, .key = "", .offset = 0, .num_desc = 211},
   {.type = CONF_TYPE_OBJECT, .key = "debug", .offset = offsetof(struct mgos_config, debug), .num_desc = 10},
   {.type = CONF_TYPE_STRING, .key = "udp_log_addr", .offset = offsetof(struct mgos_config, debug.udp_log_addr)},
   {.type = CONF_TYPE_INT, .key = "mbedtls_level", .offset = offsetof(struct mgos_config, debug.mbedtls_level)},
@@ -39,6 +39,63 @@ const struct mgos_conf_entry mgos_config_schema_[290] = {
   {.type = CONF_TYPE_STRING, .key = "id", .offset = offsetof(struct mgos_config, device.id)},
   {.type = CONF_TYPE_STRING, .key = "license", .offset = offsetof(struct mgos_config, device.license)},
   {.type = CONF_TYPE_STRING, .key = "conf_acl", .offset = offsetof(struct mgos_config, conf_acl)},
+  {.type = CONF_TYPE_OBJECT, .key = "update", .offset = offsetof(struct mgos_config, update), .num_desc = 8},
+  {.type = CONF_TYPE_INT, .key = "timeout", .offset = offsetof(struct mgos_config, update.timeout)},
+  {.type = CONF_TYPE_INT, .key = "commit_timeout", .offset = offsetof(struct mgos_config, update.commit_timeout)},
+  {.type = CONF_TYPE_STRING, .key = "url", .offset = offsetof(struct mgos_config, update.url)},
+  {.type = CONF_TYPE_INT, .key = "interval", .offset = offsetof(struct mgos_config, update.interval)},
+  {.type = CONF_TYPE_STRING, .key = "extra_http_headers", .offset = offsetof(struct mgos_config, update.extra_http_headers)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_ca_file", .offset = offsetof(struct mgos_config, update.ssl_ca_file)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_client_cert_file", .offset = offsetof(struct mgos_config, update.ssl_client_cert_file)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_server_name", .offset = offsetof(struct mgos_config, update.ssl_server_name)},
+  {.type = CONF_TYPE_OBJECT, .key = "shadow", .offset = offsetof(struct mgos_config, shadow), .num_desc = 4},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, shadow.enable)},
+  {.type = CONF_TYPE_STRING, .key = "lib", .offset = offsetof(struct mgos_config, shadow.lib)},
+  {.type = CONF_TYPE_BOOL, .key = "ota_enable", .offset = offsetof(struct mgos_config, shadow.ota_enable)},
+  {.type = CONF_TYPE_BOOL, .key = "autocommit", .offset = offsetof(struct mgos_config, shadow.autocommit)},
+  {.type = CONF_TYPE_OBJECT, .key = "rpc", .offset = offsetof(struct mgos_config, rpc), .num_desc = 21},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.enable)},
+  {.type = CONF_TYPE_INT, .key = "max_frame_size", .offset = offsetof(struct mgos_config, rpc.max_frame_size)},
+  {.type = CONF_TYPE_INT, .key = "max_queue_length", .offset = offsetof(struct mgos_config, rpc.max_queue_length)},
+  {.type = CONF_TYPE_INT, .key = "default_out_channel_idle_close_timeout", .offset = offsetof(struct mgos_config, rpc.default_out_channel_idle_close_timeout)},
+  {.type = CONF_TYPE_STRING, .key = "acl_file", .offset = offsetof(struct mgos_config, rpc.acl_file)},
+  {.type = CONF_TYPE_STRING, .key = "auth_domain", .offset = offsetof(struct mgos_config, rpc.auth_domain)},
+  {.type = CONF_TYPE_STRING, .key = "auth_file", .offset = offsetof(struct mgos_config, rpc.auth_file)},
+  {.type = CONF_TYPE_OBJECT, .key = "ws", .offset = offsetof(struct mgos_config, rpc.ws), .num_desc = 8},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.ws.enable)},
+  {.type = CONF_TYPE_STRING, .key = "server_address", .offset = offsetof(struct mgos_config, rpc.ws.server_address)},
+  {.type = CONF_TYPE_INT, .key = "reconnect_interval_min", .offset = offsetof(struct mgos_config, rpc.ws.reconnect_interval_min)},
+  {.type = CONF_TYPE_INT, .key = "reconnect_interval_max", .offset = offsetof(struct mgos_config, rpc.ws.reconnect_interval_max)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_server_name", .offset = offsetof(struct mgos_config, rpc.ws.ssl_server_name)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, rpc.ws.ssl_cert)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, rpc.ws.ssl_key)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, rpc.ws.ssl_ca_cert)},
+  {.type = CONF_TYPE_OBJECT, .key = "uart", .offset = offsetof(struct mgos_config, rpc.uart), .num_desc = 4},
+  {.type = CONF_TYPE_INT, .key = "uart_no", .offset = offsetof(struct mgos_config, rpc.uart.uart_no)},
+  {.type = CONF_TYPE_INT, .key = "baud_rate", .offset = offsetof(struct mgos_config, rpc.uart.baud_rate)},
+  {.type = CONF_TYPE_INT, .key = "fc_type", .offset = offsetof(struct mgos_config, rpc.uart.fc_type)},
+  {.type = CONF_TYPE_STRING, .key = "dst", .offset = offsetof(struct mgos_config, rpc.uart.dst)},
+  {.type = CONF_TYPE_OBJECT, .key = "dash", .offset = offsetof(struct mgos_config, dash), .num_desc = 7},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, dash.enable)},
+  {.type = CONF_TYPE_STRING, .key = "token", .offset = offsetof(struct mgos_config, dash.token)},
+  {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct mgos_config, dash.server)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, dash.ssl_cert)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, dash.ssl_key)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, dash.ssl_ca_cert)},
+  {.type = CONF_TYPE_BOOL, .key = "send_logs", .offset = offsetof(struct mgos_config, dash.send_logs)},
+  {.type = CONF_TYPE_OBJECT, .key = "http", .offset = offsetof(struct mgos_config, http), .num_desc = 10},
+  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, http.enable)},
+  {.type = CONF_TYPE_STRING, .key = "listen_addr", .offset = offsetof(struct mgos_config, http.listen_addr)},
+  {.type = CONF_TYPE_STRING, .key = "document_root", .offset = offsetof(struct mgos_config, http.document_root)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, http.ssl_cert)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, http.ssl_key)},
+  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, http.ssl_ca_cert)},
+  {.type = CONF_TYPE_STRING, .key = "upload_acl", .offset = offsetof(struct mgos_config, http.upload_acl)},
+  {.type = CONF_TYPE_STRING, .key = "hidden_files", .offset = offsetof(struct mgos_config, http.hidden_files)},
+  {.type = CONF_TYPE_STRING, .key = "auth_domain", .offset = offsetof(struct mgos_config, http.auth_domain)},
+  {.type = CONF_TYPE_STRING, .key = "auth_file", .offset = offsetof(struct mgos_config, http.auth_file)},
+  {.type = CONF_TYPE_OBJECT, .key = "mjs", .offset = offsetof(struct mgos_config, mjs), .num_desc = 1},
+  {.type = CONF_TYPE_BOOL, .key = "generate_jsc", .offset = offsetof(struct mgos_config, mjs.generate_jsc)},
   {.type = CONF_TYPE_OBJECT, .key = "mqtt", .offset = offsetof(struct mgos_config, mqtt), .num_desc = 21},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, mqtt.enable)},
   {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct mgos_config, mqtt.server)},
@@ -83,122 +140,6 @@ const struct mgos_conf_entry mgos_config_schema_[290] = {
   {.type = CONF_TYPE_INT, .key = "recv_mbuf_limit", .offset = offsetof(struct mgos_config, mqtt1.recv_mbuf_limit)},
   {.type = CONF_TYPE_BOOL, .key = "require_time", .offset = offsetof(struct mgos_config, mqtt1.require_time)},
   {.type = CONF_TYPE_BOOL, .key = "cloud_events", .offset = offsetof(struct mgos_config, mqtt1.cloud_events)},
-  {.type = CONF_TYPE_OBJECT, .key = "shadow", .offset = offsetof(struct mgos_config, shadow), .num_desc = 4},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, shadow.enable)},
-  {.type = CONF_TYPE_STRING, .key = "lib", .offset = offsetof(struct mgos_config, shadow.lib)},
-  {.type = CONF_TYPE_BOOL, .key = "ota_enable", .offset = offsetof(struct mgos_config, shadow.ota_enable)},
-  {.type = CONF_TYPE_BOOL, .key = "autocommit", .offset = offsetof(struct mgos_config, shadow.autocommit)},
-  {.type = CONF_TYPE_OBJECT, .key = "aws", .offset = offsetof(struct mgos_config, aws), .num_desc = 5},
-  {.type = CONF_TYPE_STRING, .key = "thing_name", .offset = offsetof(struct mgos_config, aws.thing_name)},
-  {.type = CONF_TYPE_OBJECT, .key = "greengrass", .offset = offsetof(struct mgos_config, aws.greengrass), .num_desc = 3},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, aws.greengrass.enable)},
-  {.type = CONF_TYPE_INT, .key = "reconnect_timeout_min", .offset = offsetof(struct mgos_config, aws.greengrass.reconnect_timeout_min)},
-  {.type = CONF_TYPE_INT, .key = "reconnect_timeout_max", .offset = offsetof(struct mgos_config, aws.greengrass.reconnect_timeout_max)},
-  {.type = CONF_TYPE_OBJECT, .key = "sntp", .offset = offsetof(struct mgos_config, sntp), .num_desc = 5},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, sntp.enable)},
-  {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct mgos_config, sntp.server)},
-  {.type = CONF_TYPE_INT, .key = "retry_min", .offset = offsetof(struct mgos_config, sntp.retry_min)},
-  {.type = CONF_TYPE_INT, .key = "retry_max", .offset = offsetof(struct mgos_config, sntp.retry_max)},
-  {.type = CONF_TYPE_INT, .key = "update_interval", .offset = offsetof(struct mgos_config, sntp.update_interval)},
-  {.type = CONF_TYPE_OBJECT, .key = "azure", .offset = offsetof(struct mgos_config, azure), .num_desc = 9},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, azure.enable)},
-  {.type = CONF_TYPE_STRING, .key = "cs", .offset = offsetof(struct mgos_config, azure.cs)},
-  {.type = CONF_TYPE_INT, .key = "token_ttl", .offset = offsetof(struct mgos_config, azure.token_ttl)},
-  {.type = CONF_TYPE_STRING, .key = "host_name", .offset = offsetof(struct mgos_config, azure.host_name)},
-  {.type = CONF_TYPE_STRING, .key = "device_id", .offset = offsetof(struct mgos_config, azure.device_id)},
-  {.type = CONF_TYPE_STRING, .key = "cert", .offset = offsetof(struct mgos_config, azure.cert)},
-  {.type = CONF_TYPE_STRING, .key = "key", .offset = offsetof(struct mgos_config, azure.key)},
-  {.type = CONF_TYPE_BOOL, .key = "enable_cm", .offset = offsetof(struct mgos_config, azure.enable_cm)},
-  {.type = CONF_TYPE_BOOL, .key = "enable_dm", .offset = offsetof(struct mgos_config, azure.enable_dm)},
-  {.type = CONF_TYPE_OBJECT, .key = "update", .offset = offsetof(struct mgos_config, update), .num_desc = 9},
-  {.type = CONF_TYPE_INT, .key = "timeout", .offset = offsetof(struct mgos_config, update.timeout)},
-  {.type = CONF_TYPE_INT, .key = "commit_timeout", .offset = offsetof(struct mgos_config, update.commit_timeout)},
-  {.type = CONF_TYPE_STRING, .key = "url", .offset = offsetof(struct mgos_config, update.url)},
-  {.type = CONF_TYPE_INT, .key = "interval", .offset = offsetof(struct mgos_config, update.interval)},
-  {.type = CONF_TYPE_STRING, .key = "extra_http_headers", .offset = offsetof(struct mgos_config, update.extra_http_headers)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_ca_file", .offset = offsetof(struct mgos_config, update.ssl_ca_file)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_client_cert_file", .offset = offsetof(struct mgos_config, update.ssl_client_cert_file)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_server_name", .offset = offsetof(struct mgos_config, update.ssl_server_name)},
-  {.type = CONF_TYPE_BOOL, .key = "enable_post", .offset = offsetof(struct mgos_config, update.enable_post)},
-  {.type = CONF_TYPE_OBJECT, .key = "rpc", .offset = offsetof(struct mgos_config, rpc), .num_desc = 32},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.enable)},
-  {.type = CONF_TYPE_INT, .key = "max_frame_size", .offset = offsetof(struct mgos_config, rpc.max_frame_size)},
-  {.type = CONF_TYPE_INT, .key = "max_queue_length", .offset = offsetof(struct mgos_config, rpc.max_queue_length)},
-  {.type = CONF_TYPE_INT, .key = "default_out_channel_idle_close_timeout", .offset = offsetof(struct mgos_config, rpc.default_out_channel_idle_close_timeout)},
-  {.type = CONF_TYPE_STRING, .key = "acl_file", .offset = offsetof(struct mgos_config, rpc.acl_file)},
-  {.type = CONF_TYPE_STRING, .key = "auth_domain", .offset = offsetof(struct mgos_config, rpc.auth_domain)},
-  {.type = CONF_TYPE_STRING, .key = "auth_file", .offset = offsetof(struct mgos_config, rpc.auth_file)},
-  {.type = CONF_TYPE_OBJECT, .key = "ws", .offset = offsetof(struct mgos_config, rpc.ws), .num_desc = 8},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.ws.enable)},
-  {.type = CONF_TYPE_STRING, .key = "server_address", .offset = offsetof(struct mgos_config, rpc.ws.server_address)},
-  {.type = CONF_TYPE_INT, .key = "reconnect_interval_min", .offset = offsetof(struct mgos_config, rpc.ws.reconnect_interval_min)},
-  {.type = CONF_TYPE_INT, .key = "reconnect_interval_max", .offset = offsetof(struct mgos_config, rpc.ws.reconnect_interval_max)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_server_name", .offset = offsetof(struct mgos_config, rpc.ws.ssl_server_name)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, rpc.ws.ssl_cert)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, rpc.ws.ssl_key)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, rpc.ws.ssl_ca_cert)},
-  {.type = CONF_TYPE_OBJECT, .key = "azure", .offset = offsetof(struct mgos_config, rpc.azure), .num_desc = 1},
-  {.type = CONF_TYPE_BOOL, .key = "enable_dm", .offset = offsetof(struct mgos_config, rpc.azure.enable_dm)},
-  {.type = CONF_TYPE_OBJECT, .key = "gcp", .offset = offsetof(struct mgos_config, rpc.gcp), .num_desc = 2},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.gcp.enable)},
-  {.type = CONF_TYPE_STRING, .key = "subfolder", .offset = offsetof(struct mgos_config, rpc.gcp.subfolder)},
-  {.type = CONF_TYPE_OBJECT, .key = "mqtt", .offset = offsetof(struct mgos_config, rpc.mqtt), .num_desc = 5},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, rpc.mqtt.enable)},
-  {.type = CONF_TYPE_STRING, .key = "pub_topic", .offset = offsetof(struct mgos_config, rpc.mqtt.pub_topic)},
-  {.type = CONF_TYPE_STRING, .key = "sub_topic", .offset = offsetof(struct mgos_config, rpc.mqtt.sub_topic)},
-  {.type = CONF_TYPE_BOOL, .key = "sub_wc", .offset = offsetof(struct mgos_config, rpc.mqtt.sub_wc)},
-  {.type = CONF_TYPE_INT, .key = "qos", .offset = offsetof(struct mgos_config, rpc.mqtt.qos)},
-  {.type = CONF_TYPE_OBJECT, .key = "uart", .offset = offsetof(struct mgos_config, rpc.uart), .num_desc = 4},
-  {.type = CONF_TYPE_INT, .key = "uart_no", .offset = offsetof(struct mgos_config, rpc.uart.uart_no)},
-  {.type = CONF_TYPE_INT, .key = "baud_rate", .offset = offsetof(struct mgos_config, rpc.uart.baud_rate)},
-  {.type = CONF_TYPE_INT, .key = "fc_type", .offset = offsetof(struct mgos_config, rpc.uart.fc_type)},
-  {.type = CONF_TYPE_STRING, .key = "dst", .offset = offsetof(struct mgos_config, rpc.uart.dst)},
-  {.type = CONF_TYPE_OBJECT, .key = "dash", .offset = offsetof(struct mgos_config, dash), .num_desc = 7},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, dash.enable)},
-  {.type = CONF_TYPE_STRING, .key = "token", .offset = offsetof(struct mgos_config, dash.token)},
-  {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct mgos_config, dash.server)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, dash.ssl_cert)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, dash.ssl_key)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, dash.ssl_ca_cert)},
-  {.type = CONF_TYPE_BOOL, .key = "send_logs", .offset = offsetof(struct mgos_config, dash.send_logs)},
-  {.type = CONF_TYPE_OBJECT, .key = "http", .offset = offsetof(struct mgos_config, http), .num_desc = 10},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, http.enable)},
-  {.type = CONF_TYPE_STRING, .key = "listen_addr", .offset = offsetof(struct mgos_config, http.listen_addr)},
-  {.type = CONF_TYPE_STRING, .key = "document_root", .offset = offsetof(struct mgos_config, http.document_root)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_cert", .offset = offsetof(struct mgos_config, http.ssl_cert)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_key", .offset = offsetof(struct mgos_config, http.ssl_key)},
-  {.type = CONF_TYPE_STRING, .key = "ssl_ca_cert", .offset = offsetof(struct mgos_config, http.ssl_ca_cert)},
-  {.type = CONF_TYPE_STRING, .key = "upload_acl", .offset = offsetof(struct mgos_config, http.upload_acl)},
-  {.type = CONF_TYPE_STRING, .key = "hidden_files", .offset = offsetof(struct mgos_config, http.hidden_files)},
-  {.type = CONF_TYPE_STRING, .key = "auth_domain", .offset = offsetof(struct mgos_config, http.auth_domain)},
-  {.type = CONF_TYPE_STRING, .key = "auth_file", .offset = offsetof(struct mgos_config, http.auth_file)},
-  {.type = CONF_TYPE_OBJECT, .key = "dns_sd", .offset = offsetof(struct mgos_config, dns_sd), .num_desc = 4},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, dns_sd.enable)},
-  {.type = CONF_TYPE_STRING, .key = "host_name", .offset = offsetof(struct mgos_config, dns_sd.host_name)},
-  {.type = CONF_TYPE_STRING, .key = "txt", .offset = offsetof(struct mgos_config, dns_sd.txt)},
-  {.type = CONF_TYPE_INT, .key = "ttl", .offset = offsetof(struct mgos_config, dns_sd.ttl)},
-  {.type = CONF_TYPE_OBJECT, .key = "gcp", .offset = offsetof(struct mgos_config, gcp), .num_desc = 10},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, gcp.enable)},
-  {.type = CONF_TYPE_STRING, .key = "server", .offset = offsetof(struct mgos_config, gcp.server)},
-  {.type = CONF_TYPE_STRING, .key = "project", .offset = offsetof(struct mgos_config, gcp.project)},
-  {.type = CONF_TYPE_STRING, .key = "region", .offset = offsetof(struct mgos_config, gcp.region)},
-  {.type = CONF_TYPE_STRING, .key = "registry", .offset = offsetof(struct mgos_config, gcp.registry)},
-  {.type = CONF_TYPE_STRING, .key = "device", .offset = offsetof(struct mgos_config, gcp.device)},
-  {.type = CONF_TYPE_STRING, .key = "key", .offset = offsetof(struct mgos_config, gcp.key)},
-  {.type = CONF_TYPE_INT, .key = "token_ttl", .offset = offsetof(struct mgos_config, gcp.token_ttl)},
-  {.type = CONF_TYPE_BOOL, .key = "enable_config", .offset = offsetof(struct mgos_config, gcp.enable_config)},
-  {.type = CONF_TYPE_BOOL, .key = "enable_commands", .offset = offsetof(struct mgos_config, gcp.enable_commands)},
-  {.type = CONF_TYPE_OBJECT, .key = "provision", .offset = offsetof(struct mgos_config, provision), .num_desc = 10},
-  {.type = CONF_TYPE_OBJECT, .key = "btn", .offset = offsetof(struct mgos_config, provision.btn), .num_desc = 3},
-  {.type = CONF_TYPE_INT, .key = "pin", .offset = offsetof(struct mgos_config, provision.btn.pin)},
-  {.type = CONF_TYPE_BOOL, .key = "pull_up", .offset = offsetof(struct mgos_config, provision.btn.pull_up)},
-  {.type = CONF_TYPE_INT, .key = "hold_ms", .offset = offsetof(struct mgos_config, provision.btn.hold_ms)},
-  {.type = CONF_TYPE_OBJECT, .key = "led", .offset = offsetof(struct mgos_config, provision.led), .num_desc = 2},
-  {.type = CONF_TYPE_INT, .key = "pin", .offset = offsetof(struct mgos_config, provision.led.pin)},
-  {.type = CONF_TYPE_BOOL, .key = "active_high", .offset = offsetof(struct mgos_config, provision.led.active_high)},
-  {.type = CONF_TYPE_INT, .key = "stable_state", .offset = offsetof(struct mgos_config, provision.stable_state)},
-  {.type = CONF_TYPE_INT, .key = "timeout", .offset = offsetof(struct mgos_config, provision.timeout)},
-  {.type = CONF_TYPE_INT, .key = "max_state", .offset = offsetof(struct mgos_config, provision.max_state)},
   {.type = CONF_TYPE_OBJECT, .key = "wifi", .offset = offsetof(struct mgos_config, wifi), .num_desc = 60},
   {.type = CONF_TYPE_OBJECT, .key = "ap", .offset = offsetof(struct mgos_config, wifi.ap), .num_desc = 15},
   {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, wifi.ap.enable)},
@@ -260,25 +201,6 @@ const struct mgos_conf_entry mgos_config_schema_[290] = {
   {.type = CONF_TYPE_STRING, .key = "dhcp_hostname", .offset = offsetof(struct mgos_config, wifi.sta2.dhcp_hostname)},
   {.type = CONF_TYPE_INT, .key = "sta_cfg_idx", .offset = offsetof(struct mgos_config, wifi.sta_cfg_idx)},
   {.type = CONF_TYPE_INT, .key = "sta_connect_timeout", .offset = offsetof(struct mgos_config, wifi.sta_connect_timeout)},
-  {.type = CONF_TYPE_OBJECT, .key = "spi", .offset = offsetof(struct mgos_config, spi), .num_desc = 8},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, spi.enable)},
-  {.type = CONF_TYPE_BOOL, .key = "debug", .offset = offsetof(struct mgos_config, spi.debug)},
-  {.type = CONF_TYPE_INT, .key = "miso_gpio", .offset = offsetof(struct mgos_config, spi.miso_gpio)},
-  {.type = CONF_TYPE_INT, .key = "mosi_gpio", .offset = offsetof(struct mgos_config, spi.mosi_gpio)},
-  {.type = CONF_TYPE_INT, .key = "sclk_gpio", .offset = offsetof(struct mgos_config, spi.sclk_gpio)},
-  {.type = CONF_TYPE_INT, .key = "cs0_gpio", .offset = offsetof(struct mgos_config, spi.cs0_gpio)},
-  {.type = CONF_TYPE_INT, .key = "cs1_gpio", .offset = offsetof(struct mgos_config, spi.cs1_gpio)},
-  {.type = CONF_TYPE_INT, .key = "cs2_gpio", .offset = offsetof(struct mgos_config, spi.cs2_gpio)},
-  {.type = CONF_TYPE_OBJECT, .key = "watson", .offset = offsetof(struct mgos_config, watson), .num_desc = 7},
-  {.type = CONF_TYPE_BOOL, .key = "enable", .offset = offsetof(struct mgos_config, watson.enable)},
-  {.type = CONF_TYPE_STRING, .key = "host_name", .offset = offsetof(struct mgos_config, watson.host_name)},
-  {.type = CONF_TYPE_STRING, .key = "client_id", .offset = offsetof(struct mgos_config, watson.client_id)},
-  {.type = CONF_TYPE_STRING, .key = "token", .offset = offsetof(struct mgos_config, watson.token)},
-  {.type = CONF_TYPE_STRING, .key = "cert", .offset = offsetof(struct mgos_config, watson.cert)},
-  {.type = CONF_TYPE_STRING, .key = "key", .offset = offsetof(struct mgos_config, watson.key)},
-  {.type = CONF_TYPE_STRING, .key = "ca_cert", .offset = offsetof(struct mgos_config, watson.ca_cert)},
-  {.type = CONF_TYPE_OBJECT, .key = "mjs", .offset = offsetof(struct mgos_config, mjs), .num_desc = 1},
-  {.type = CONF_TYPE_BOOL, .key = "generate_jsc", .offset = offsetof(struct mgos_config, mjs.generate_jsc)},
   {.type = CONF_TYPE_OBJECT, .key = "board", .offset = offsetof(struct mgos_config, board), .num_desc = 18},
   {.type = CONF_TYPE_OBJECT, .key = "led1", .offset = offsetof(struct mgos_config, board.led1), .num_desc = 2},
   {.type = CONF_TYPE_INT, .key = "pin", .offset = offsetof(struct mgos_config, board.led1.pin)},
@@ -397,6 +319,177 @@ const char *mgos_config_get_device_license(struct mgos_config *cfg) {
 }
 const char *mgos_config_get_conf_acl(struct mgos_config *cfg) {
   return cfg->conf_acl;
+}
+const struct mgos_config_update *mgos_config_get_update(struct mgos_config *cfg) {
+  return &cfg->update;
+}
+int         mgos_config_get_update_timeout(struct mgos_config *cfg) {
+  return cfg->update.timeout;
+}
+int         mgos_config_get_update_commit_timeout(struct mgos_config *cfg) {
+  return cfg->update.commit_timeout;
+}
+const char *mgos_config_get_update_url(struct mgos_config *cfg) {
+  return cfg->update.url;
+}
+int         mgos_config_get_update_interval(struct mgos_config *cfg) {
+  return cfg->update.interval;
+}
+const char *mgos_config_get_update_extra_http_headers(struct mgos_config *cfg) {
+  return cfg->update.extra_http_headers;
+}
+const char *mgos_config_get_update_ssl_ca_file(struct mgos_config *cfg) {
+  return cfg->update.ssl_ca_file;
+}
+const char *mgos_config_get_update_ssl_client_cert_file(struct mgos_config *cfg) {
+  return cfg->update.ssl_client_cert_file;
+}
+const char *mgos_config_get_update_ssl_server_name(struct mgos_config *cfg) {
+  return cfg->update.ssl_server_name;
+}
+const struct mgos_config_shadow *mgos_config_get_shadow(struct mgos_config *cfg) {
+  return &cfg->shadow;
+}
+int         mgos_config_get_shadow_enable(struct mgos_config *cfg) {
+  return cfg->shadow.enable;
+}
+const char *mgos_config_get_shadow_lib(struct mgos_config *cfg) {
+  return cfg->shadow.lib;
+}
+int         mgos_config_get_shadow_ota_enable(struct mgos_config *cfg) {
+  return cfg->shadow.ota_enable;
+}
+int         mgos_config_get_shadow_autocommit(struct mgos_config *cfg) {
+  return cfg->shadow.autocommit;
+}
+const struct mgos_config_rpc *mgos_config_get_rpc(struct mgos_config *cfg) {
+  return &cfg->rpc;
+}
+int         mgos_config_get_rpc_enable(struct mgos_config *cfg) {
+  return cfg->rpc.enable;
+}
+int         mgos_config_get_rpc_max_frame_size(struct mgos_config *cfg) {
+  return cfg->rpc.max_frame_size;
+}
+int         mgos_config_get_rpc_max_queue_length(struct mgos_config *cfg) {
+  return cfg->rpc.max_queue_length;
+}
+int         mgos_config_get_rpc_default_out_channel_idle_close_timeout(struct mgos_config *cfg) {
+  return cfg->rpc.default_out_channel_idle_close_timeout;
+}
+const char *mgos_config_get_rpc_acl_file(struct mgos_config *cfg) {
+  return cfg->rpc.acl_file;
+}
+const char *mgos_config_get_rpc_auth_domain(struct mgos_config *cfg) {
+  return cfg->rpc.auth_domain;
+}
+const char *mgos_config_get_rpc_auth_file(struct mgos_config *cfg) {
+  return cfg->rpc.auth_file;
+}
+const struct mgos_config_rpc_ws *mgos_config_get_rpc_ws(struct mgos_config *cfg) {
+  return &cfg->rpc.ws;
+}
+int         mgos_config_get_rpc_ws_enable(struct mgos_config *cfg) {
+  return cfg->rpc.ws.enable;
+}
+const char *mgos_config_get_rpc_ws_server_address(struct mgos_config *cfg) {
+  return cfg->rpc.ws.server_address;
+}
+int         mgos_config_get_rpc_ws_reconnect_interval_min(struct mgos_config *cfg) {
+  return cfg->rpc.ws.reconnect_interval_min;
+}
+int         mgos_config_get_rpc_ws_reconnect_interval_max(struct mgos_config *cfg) {
+  return cfg->rpc.ws.reconnect_interval_max;
+}
+const char *mgos_config_get_rpc_ws_ssl_server_name(struct mgos_config *cfg) {
+  return cfg->rpc.ws.ssl_server_name;
+}
+const char *mgos_config_get_rpc_ws_ssl_cert(struct mgos_config *cfg) {
+  return cfg->rpc.ws.ssl_cert;
+}
+const char *mgos_config_get_rpc_ws_ssl_key(struct mgos_config *cfg) {
+  return cfg->rpc.ws.ssl_key;
+}
+const char *mgos_config_get_rpc_ws_ssl_ca_cert(struct mgos_config *cfg) {
+  return cfg->rpc.ws.ssl_ca_cert;
+}
+const struct mgos_config_rpc_uart *mgos_config_get_rpc_uart(struct mgos_config *cfg) {
+  return &cfg->rpc.uart;
+}
+int         mgos_config_get_rpc_uart_uart_no(struct mgos_config *cfg) {
+  return cfg->rpc.uart.uart_no;
+}
+int         mgos_config_get_rpc_uart_baud_rate(struct mgos_config *cfg) {
+  return cfg->rpc.uart.baud_rate;
+}
+int         mgos_config_get_rpc_uart_fc_type(struct mgos_config *cfg) {
+  return cfg->rpc.uart.fc_type;
+}
+const char *mgos_config_get_rpc_uart_dst(struct mgos_config *cfg) {
+  return cfg->rpc.uart.dst;
+}
+const struct mgos_config_dash *mgos_config_get_dash(struct mgos_config *cfg) {
+  return &cfg->dash;
+}
+int         mgos_config_get_dash_enable(struct mgos_config *cfg) {
+  return cfg->dash.enable;
+}
+const char *mgos_config_get_dash_token(struct mgos_config *cfg) {
+  return cfg->dash.token;
+}
+const char *mgos_config_get_dash_server(struct mgos_config *cfg) {
+  return cfg->dash.server;
+}
+const char *mgos_config_get_dash_ssl_cert(struct mgos_config *cfg) {
+  return cfg->dash.ssl_cert;
+}
+const char *mgos_config_get_dash_ssl_key(struct mgos_config *cfg) {
+  return cfg->dash.ssl_key;
+}
+const char *mgos_config_get_dash_ssl_ca_cert(struct mgos_config *cfg) {
+  return cfg->dash.ssl_ca_cert;
+}
+int         mgos_config_get_dash_send_logs(struct mgos_config *cfg) {
+  return cfg->dash.send_logs;
+}
+const struct mgos_config_http *mgos_config_get_http(struct mgos_config *cfg) {
+  return &cfg->http;
+}
+int         mgos_config_get_http_enable(struct mgos_config *cfg) {
+  return cfg->http.enable;
+}
+const char *mgos_config_get_http_listen_addr(struct mgos_config *cfg) {
+  return cfg->http.listen_addr;
+}
+const char *mgos_config_get_http_document_root(struct mgos_config *cfg) {
+  return cfg->http.document_root;
+}
+const char *mgos_config_get_http_ssl_cert(struct mgos_config *cfg) {
+  return cfg->http.ssl_cert;
+}
+const char *mgos_config_get_http_ssl_key(struct mgos_config *cfg) {
+  return cfg->http.ssl_key;
+}
+const char *mgos_config_get_http_ssl_ca_cert(struct mgos_config *cfg) {
+  return cfg->http.ssl_ca_cert;
+}
+const char *mgos_config_get_http_upload_acl(struct mgos_config *cfg) {
+  return cfg->http.upload_acl;
+}
+const char *mgos_config_get_http_hidden_files(struct mgos_config *cfg) {
+  return cfg->http.hidden_files;
+}
+const char *mgos_config_get_http_auth_domain(struct mgos_config *cfg) {
+  return cfg->http.auth_domain;
+}
+const char *mgos_config_get_http_auth_file(struct mgos_config *cfg) {
+  return cfg->http.auth_file;
+}
+const struct mgos_config_mjs *mgos_config_get_mjs(struct mgos_config *cfg) {
+  return &cfg->mjs;
+}
+int         mgos_config_get_mjs_generate_jsc(struct mgos_config *cfg) {
+  return cfg->mjs.generate_jsc;
 }
 const struct mgos_config_mqtt *mgos_config_get_mqtt(struct mgos_config *cfg) {
   return &cfg->mqtt;
@@ -529,354 +622,6 @@ int         mgos_config_get_mqtt1_require_time(struct mgos_config *cfg) {
 }
 int         mgos_config_get_mqtt1_cloud_events(struct mgos_config *cfg) {
   return cfg->mqtt1.cloud_events;
-}
-const struct mgos_config_shadow *mgos_config_get_shadow(struct mgos_config *cfg) {
-  return &cfg->shadow;
-}
-int         mgos_config_get_shadow_enable(struct mgos_config *cfg) {
-  return cfg->shadow.enable;
-}
-const char *mgos_config_get_shadow_lib(struct mgos_config *cfg) {
-  return cfg->shadow.lib;
-}
-int         mgos_config_get_shadow_ota_enable(struct mgos_config *cfg) {
-  return cfg->shadow.ota_enable;
-}
-int         mgos_config_get_shadow_autocommit(struct mgos_config *cfg) {
-  return cfg->shadow.autocommit;
-}
-const struct mgos_config_aws *mgos_config_get_aws(struct mgos_config *cfg) {
-  return &cfg->aws;
-}
-const char *mgos_config_get_aws_thing_name(struct mgos_config *cfg) {
-  return cfg->aws.thing_name;
-}
-const struct mgos_config_aws_greengrass *mgos_config_get_aws_greengrass(struct mgos_config *cfg) {
-  return &cfg->aws.greengrass;
-}
-int         mgos_config_get_aws_greengrass_enable(struct mgos_config *cfg) {
-  return cfg->aws.greengrass.enable;
-}
-int         mgos_config_get_aws_greengrass_reconnect_timeout_min(struct mgos_config *cfg) {
-  return cfg->aws.greengrass.reconnect_timeout_min;
-}
-int         mgos_config_get_aws_greengrass_reconnect_timeout_max(struct mgos_config *cfg) {
-  return cfg->aws.greengrass.reconnect_timeout_max;
-}
-const struct mgos_config_sntp *mgos_config_get_sntp(struct mgos_config *cfg) {
-  return &cfg->sntp;
-}
-int         mgos_config_get_sntp_enable(struct mgos_config *cfg) {
-  return cfg->sntp.enable;
-}
-const char *mgos_config_get_sntp_server(struct mgos_config *cfg) {
-  return cfg->sntp.server;
-}
-int         mgos_config_get_sntp_retry_min(struct mgos_config *cfg) {
-  return cfg->sntp.retry_min;
-}
-int         mgos_config_get_sntp_retry_max(struct mgos_config *cfg) {
-  return cfg->sntp.retry_max;
-}
-int         mgos_config_get_sntp_update_interval(struct mgos_config *cfg) {
-  return cfg->sntp.update_interval;
-}
-const struct mgos_config_azure *mgos_config_get_azure(struct mgos_config *cfg) {
-  return &cfg->azure;
-}
-int         mgos_config_get_azure_enable(struct mgos_config *cfg) {
-  return cfg->azure.enable;
-}
-const char *mgos_config_get_azure_cs(struct mgos_config *cfg) {
-  return cfg->azure.cs;
-}
-int         mgos_config_get_azure_token_ttl(struct mgos_config *cfg) {
-  return cfg->azure.token_ttl;
-}
-const char *mgos_config_get_azure_host_name(struct mgos_config *cfg) {
-  return cfg->azure.host_name;
-}
-const char *mgos_config_get_azure_device_id(struct mgos_config *cfg) {
-  return cfg->azure.device_id;
-}
-const char *mgos_config_get_azure_cert(struct mgos_config *cfg) {
-  return cfg->azure.cert;
-}
-const char *mgos_config_get_azure_key(struct mgos_config *cfg) {
-  return cfg->azure.key;
-}
-int         mgos_config_get_azure_enable_cm(struct mgos_config *cfg) {
-  return cfg->azure.enable_cm;
-}
-int         mgos_config_get_azure_enable_dm(struct mgos_config *cfg) {
-  return cfg->azure.enable_dm;
-}
-const struct mgos_config_update *mgos_config_get_update(struct mgos_config *cfg) {
-  return &cfg->update;
-}
-int         mgos_config_get_update_timeout(struct mgos_config *cfg) {
-  return cfg->update.timeout;
-}
-int         mgos_config_get_update_commit_timeout(struct mgos_config *cfg) {
-  return cfg->update.commit_timeout;
-}
-const char *mgos_config_get_update_url(struct mgos_config *cfg) {
-  return cfg->update.url;
-}
-int         mgos_config_get_update_interval(struct mgos_config *cfg) {
-  return cfg->update.interval;
-}
-const char *mgos_config_get_update_extra_http_headers(struct mgos_config *cfg) {
-  return cfg->update.extra_http_headers;
-}
-const char *mgos_config_get_update_ssl_ca_file(struct mgos_config *cfg) {
-  return cfg->update.ssl_ca_file;
-}
-const char *mgos_config_get_update_ssl_client_cert_file(struct mgos_config *cfg) {
-  return cfg->update.ssl_client_cert_file;
-}
-const char *mgos_config_get_update_ssl_server_name(struct mgos_config *cfg) {
-  return cfg->update.ssl_server_name;
-}
-int         mgos_config_get_update_enable_post(struct mgos_config *cfg) {
-  return cfg->update.enable_post;
-}
-const struct mgos_config_rpc *mgos_config_get_rpc(struct mgos_config *cfg) {
-  return &cfg->rpc;
-}
-int         mgos_config_get_rpc_enable(struct mgos_config *cfg) {
-  return cfg->rpc.enable;
-}
-int         mgos_config_get_rpc_max_frame_size(struct mgos_config *cfg) {
-  return cfg->rpc.max_frame_size;
-}
-int         mgos_config_get_rpc_max_queue_length(struct mgos_config *cfg) {
-  return cfg->rpc.max_queue_length;
-}
-int         mgos_config_get_rpc_default_out_channel_idle_close_timeout(struct mgos_config *cfg) {
-  return cfg->rpc.default_out_channel_idle_close_timeout;
-}
-const char *mgos_config_get_rpc_acl_file(struct mgos_config *cfg) {
-  return cfg->rpc.acl_file;
-}
-const char *mgos_config_get_rpc_auth_domain(struct mgos_config *cfg) {
-  return cfg->rpc.auth_domain;
-}
-const char *mgos_config_get_rpc_auth_file(struct mgos_config *cfg) {
-  return cfg->rpc.auth_file;
-}
-const struct mgos_config_rpc_ws *mgos_config_get_rpc_ws(struct mgos_config *cfg) {
-  return &cfg->rpc.ws;
-}
-int         mgos_config_get_rpc_ws_enable(struct mgos_config *cfg) {
-  return cfg->rpc.ws.enable;
-}
-const char *mgos_config_get_rpc_ws_server_address(struct mgos_config *cfg) {
-  return cfg->rpc.ws.server_address;
-}
-int         mgos_config_get_rpc_ws_reconnect_interval_min(struct mgos_config *cfg) {
-  return cfg->rpc.ws.reconnect_interval_min;
-}
-int         mgos_config_get_rpc_ws_reconnect_interval_max(struct mgos_config *cfg) {
-  return cfg->rpc.ws.reconnect_interval_max;
-}
-const char *mgos_config_get_rpc_ws_ssl_server_name(struct mgos_config *cfg) {
-  return cfg->rpc.ws.ssl_server_name;
-}
-const char *mgos_config_get_rpc_ws_ssl_cert(struct mgos_config *cfg) {
-  return cfg->rpc.ws.ssl_cert;
-}
-const char *mgos_config_get_rpc_ws_ssl_key(struct mgos_config *cfg) {
-  return cfg->rpc.ws.ssl_key;
-}
-const char *mgos_config_get_rpc_ws_ssl_ca_cert(struct mgos_config *cfg) {
-  return cfg->rpc.ws.ssl_ca_cert;
-}
-const struct mgos_config_rpc_azure *mgos_config_get_rpc_azure(struct mgos_config *cfg) {
-  return &cfg->rpc.azure;
-}
-int         mgos_config_get_rpc_azure_enable_dm(struct mgos_config *cfg) {
-  return cfg->rpc.azure.enable_dm;
-}
-const struct mgos_config_rpc_gcp *mgos_config_get_rpc_gcp(struct mgos_config *cfg) {
-  return &cfg->rpc.gcp;
-}
-int         mgos_config_get_rpc_gcp_enable(struct mgos_config *cfg) {
-  return cfg->rpc.gcp.enable;
-}
-const char *mgos_config_get_rpc_gcp_subfolder(struct mgos_config *cfg) {
-  return cfg->rpc.gcp.subfolder;
-}
-const struct mgos_config_rpc_mqtt *mgos_config_get_rpc_mqtt(struct mgos_config *cfg) {
-  return &cfg->rpc.mqtt;
-}
-int         mgos_config_get_rpc_mqtt_enable(struct mgos_config *cfg) {
-  return cfg->rpc.mqtt.enable;
-}
-const char *mgos_config_get_rpc_mqtt_pub_topic(struct mgos_config *cfg) {
-  return cfg->rpc.mqtt.pub_topic;
-}
-const char *mgos_config_get_rpc_mqtt_sub_topic(struct mgos_config *cfg) {
-  return cfg->rpc.mqtt.sub_topic;
-}
-int         mgos_config_get_rpc_mqtt_sub_wc(struct mgos_config *cfg) {
-  return cfg->rpc.mqtt.sub_wc;
-}
-int         mgos_config_get_rpc_mqtt_qos(struct mgos_config *cfg) {
-  return cfg->rpc.mqtt.qos;
-}
-const struct mgos_config_rpc_uart *mgos_config_get_rpc_uart(struct mgos_config *cfg) {
-  return &cfg->rpc.uart;
-}
-int         mgos_config_get_rpc_uart_uart_no(struct mgos_config *cfg) {
-  return cfg->rpc.uart.uart_no;
-}
-int         mgos_config_get_rpc_uart_baud_rate(struct mgos_config *cfg) {
-  return cfg->rpc.uart.baud_rate;
-}
-int         mgos_config_get_rpc_uart_fc_type(struct mgos_config *cfg) {
-  return cfg->rpc.uart.fc_type;
-}
-const char *mgos_config_get_rpc_uart_dst(struct mgos_config *cfg) {
-  return cfg->rpc.uart.dst;
-}
-const struct mgos_config_dash *mgos_config_get_dash(struct mgos_config *cfg) {
-  return &cfg->dash;
-}
-int         mgos_config_get_dash_enable(struct mgos_config *cfg) {
-  return cfg->dash.enable;
-}
-const char *mgos_config_get_dash_token(struct mgos_config *cfg) {
-  return cfg->dash.token;
-}
-const char *mgos_config_get_dash_server(struct mgos_config *cfg) {
-  return cfg->dash.server;
-}
-const char *mgos_config_get_dash_ssl_cert(struct mgos_config *cfg) {
-  return cfg->dash.ssl_cert;
-}
-const char *mgos_config_get_dash_ssl_key(struct mgos_config *cfg) {
-  return cfg->dash.ssl_key;
-}
-const char *mgos_config_get_dash_ssl_ca_cert(struct mgos_config *cfg) {
-  return cfg->dash.ssl_ca_cert;
-}
-int         mgos_config_get_dash_send_logs(struct mgos_config *cfg) {
-  return cfg->dash.send_logs;
-}
-const struct mgos_config_http *mgos_config_get_http(struct mgos_config *cfg) {
-  return &cfg->http;
-}
-int         mgos_config_get_http_enable(struct mgos_config *cfg) {
-  return cfg->http.enable;
-}
-const char *mgos_config_get_http_listen_addr(struct mgos_config *cfg) {
-  return cfg->http.listen_addr;
-}
-const char *mgos_config_get_http_document_root(struct mgos_config *cfg) {
-  return cfg->http.document_root;
-}
-const char *mgos_config_get_http_ssl_cert(struct mgos_config *cfg) {
-  return cfg->http.ssl_cert;
-}
-const char *mgos_config_get_http_ssl_key(struct mgos_config *cfg) {
-  return cfg->http.ssl_key;
-}
-const char *mgos_config_get_http_ssl_ca_cert(struct mgos_config *cfg) {
-  return cfg->http.ssl_ca_cert;
-}
-const char *mgos_config_get_http_upload_acl(struct mgos_config *cfg) {
-  return cfg->http.upload_acl;
-}
-const char *mgos_config_get_http_hidden_files(struct mgos_config *cfg) {
-  return cfg->http.hidden_files;
-}
-const char *mgos_config_get_http_auth_domain(struct mgos_config *cfg) {
-  return cfg->http.auth_domain;
-}
-const char *mgos_config_get_http_auth_file(struct mgos_config *cfg) {
-  return cfg->http.auth_file;
-}
-const struct mgos_config_dns_sd *mgos_config_get_dns_sd(struct mgos_config *cfg) {
-  return &cfg->dns_sd;
-}
-int         mgos_config_get_dns_sd_enable(struct mgos_config *cfg) {
-  return cfg->dns_sd.enable;
-}
-const char *mgos_config_get_dns_sd_host_name(struct mgos_config *cfg) {
-  return cfg->dns_sd.host_name;
-}
-const char *mgos_config_get_dns_sd_txt(struct mgos_config *cfg) {
-  return cfg->dns_sd.txt;
-}
-int         mgos_config_get_dns_sd_ttl(struct mgos_config *cfg) {
-  return cfg->dns_sd.ttl;
-}
-const struct mgos_config_gcp *mgos_config_get_gcp(struct mgos_config *cfg) {
-  return &cfg->gcp;
-}
-int         mgos_config_get_gcp_enable(struct mgos_config *cfg) {
-  return cfg->gcp.enable;
-}
-const char *mgos_config_get_gcp_server(struct mgos_config *cfg) {
-  return cfg->gcp.server;
-}
-const char *mgos_config_get_gcp_project(struct mgos_config *cfg) {
-  return cfg->gcp.project;
-}
-const char *mgos_config_get_gcp_region(struct mgos_config *cfg) {
-  return cfg->gcp.region;
-}
-const char *mgos_config_get_gcp_registry(struct mgos_config *cfg) {
-  return cfg->gcp.registry;
-}
-const char *mgos_config_get_gcp_device(struct mgos_config *cfg) {
-  return cfg->gcp.device;
-}
-const char *mgos_config_get_gcp_key(struct mgos_config *cfg) {
-  return cfg->gcp.key;
-}
-int         mgos_config_get_gcp_token_ttl(struct mgos_config *cfg) {
-  return cfg->gcp.token_ttl;
-}
-int         mgos_config_get_gcp_enable_config(struct mgos_config *cfg) {
-  return cfg->gcp.enable_config;
-}
-int         mgos_config_get_gcp_enable_commands(struct mgos_config *cfg) {
-  return cfg->gcp.enable_commands;
-}
-const struct mgos_config_provision *mgos_config_get_provision(struct mgos_config *cfg) {
-  return &cfg->provision;
-}
-const struct mgos_config_provision_btn *mgos_config_get_provision_btn(struct mgos_config *cfg) {
-  return &cfg->provision.btn;
-}
-int         mgos_config_get_provision_btn_pin(struct mgos_config *cfg) {
-  return cfg->provision.btn.pin;
-}
-int         mgos_config_get_provision_btn_pull_up(struct mgos_config *cfg) {
-  return cfg->provision.btn.pull_up;
-}
-int         mgos_config_get_provision_btn_hold_ms(struct mgos_config *cfg) {
-  return cfg->provision.btn.hold_ms;
-}
-const struct mgos_config_provision_led *mgos_config_get_provision_led(struct mgos_config *cfg) {
-  return &cfg->provision.led;
-}
-int         mgos_config_get_provision_led_pin(struct mgos_config *cfg) {
-  return cfg->provision.led.pin;
-}
-int         mgos_config_get_provision_led_active_high(struct mgos_config *cfg) {
-  return cfg->provision.led.active_high;
-}
-int         mgos_config_get_provision_stable_state(struct mgos_config *cfg) {
-  return cfg->provision.stable_state;
-}
-int         mgos_config_get_provision_timeout(struct mgos_config *cfg) {
-  return cfg->provision.timeout;
-}
-int         mgos_config_get_provision_max_state(struct mgos_config *cfg) {
-  return cfg->provision.max_state;
 }
 const struct mgos_config_wifi *mgos_config_get_wifi(struct mgos_config *cfg) {
   return &cfg->wifi;
@@ -1061,63 +806,6 @@ int         mgos_config_get_wifi_sta_cfg_idx(struct mgos_config *cfg) {
 int         mgos_config_get_wifi_sta_connect_timeout(struct mgos_config *cfg) {
   return cfg->wifi.sta_connect_timeout;
 }
-const struct mgos_config_spi *mgos_config_get_spi(struct mgos_config *cfg) {
-  return &cfg->spi;
-}
-int         mgos_config_get_spi_enable(struct mgos_config *cfg) {
-  return cfg->spi.enable;
-}
-int         mgos_config_get_spi_debug(struct mgos_config *cfg) {
-  return cfg->spi.debug;
-}
-int         mgos_config_get_spi_miso_gpio(struct mgos_config *cfg) {
-  return cfg->spi.miso_gpio;
-}
-int         mgos_config_get_spi_mosi_gpio(struct mgos_config *cfg) {
-  return cfg->spi.mosi_gpio;
-}
-int         mgos_config_get_spi_sclk_gpio(struct mgos_config *cfg) {
-  return cfg->spi.sclk_gpio;
-}
-int         mgos_config_get_spi_cs0_gpio(struct mgos_config *cfg) {
-  return cfg->spi.cs0_gpio;
-}
-int         mgos_config_get_spi_cs1_gpio(struct mgos_config *cfg) {
-  return cfg->spi.cs1_gpio;
-}
-int         mgos_config_get_spi_cs2_gpio(struct mgos_config *cfg) {
-  return cfg->spi.cs2_gpio;
-}
-const struct mgos_config_watson *mgos_config_get_watson(struct mgos_config *cfg) {
-  return &cfg->watson;
-}
-int         mgos_config_get_watson_enable(struct mgos_config *cfg) {
-  return cfg->watson.enable;
-}
-const char *mgos_config_get_watson_host_name(struct mgos_config *cfg) {
-  return cfg->watson.host_name;
-}
-const char *mgos_config_get_watson_client_id(struct mgos_config *cfg) {
-  return cfg->watson.client_id;
-}
-const char *mgos_config_get_watson_token(struct mgos_config *cfg) {
-  return cfg->watson.token;
-}
-const char *mgos_config_get_watson_cert(struct mgos_config *cfg) {
-  return cfg->watson.cert;
-}
-const char *mgos_config_get_watson_key(struct mgos_config *cfg) {
-  return cfg->watson.key;
-}
-const char *mgos_config_get_watson_ca_cert(struct mgos_config *cfg) {
-  return cfg->watson.ca_cert;
-}
-const struct mgos_config_mjs *mgos_config_get_mjs(struct mgos_config *cfg) {
-  return &cfg->mjs;
-}
-int         mgos_config_get_mjs_generate_jsc(struct mgos_config *cfg) {
-  return cfg->mjs.generate_jsc;
-}
 const struct mgos_config_board *mgos_config_get_board(struct mgos_config *cfg) {
   return &cfg->board;
 }
@@ -1253,6 +941,153 @@ void mgos_config_set_device_license(struct mgos_config *cfg, const char *val) {
 void mgos_config_set_conf_acl(struct mgos_config *cfg, const char *val) {
   mgos_conf_set_str(&cfg->conf_acl, val);
 }
+void mgos_config_set_update_timeout(struct mgos_config *cfg, int         val) {
+  cfg->update.timeout = val;
+}
+void mgos_config_set_update_commit_timeout(struct mgos_config *cfg, int         val) {
+  cfg->update.commit_timeout = val;
+}
+void mgos_config_set_update_url(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->update.url, val);
+}
+void mgos_config_set_update_interval(struct mgos_config *cfg, int         val) {
+  cfg->update.interval = val;
+}
+void mgos_config_set_update_extra_http_headers(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->update.extra_http_headers, val);
+}
+void mgos_config_set_update_ssl_ca_file(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->update.ssl_ca_file, val);
+}
+void mgos_config_set_update_ssl_client_cert_file(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->update.ssl_client_cert_file, val);
+}
+void mgos_config_set_update_ssl_server_name(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->update.ssl_server_name, val);
+}
+void mgos_config_set_shadow_enable(struct mgos_config *cfg, int         val) {
+  cfg->shadow.enable = val;
+}
+void mgos_config_set_shadow_lib(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->shadow.lib, val);
+}
+void mgos_config_set_shadow_ota_enable(struct mgos_config *cfg, int         val) {
+  cfg->shadow.ota_enable = val;
+}
+void mgos_config_set_shadow_autocommit(struct mgos_config *cfg, int         val) {
+  cfg->shadow.autocommit = val;
+}
+void mgos_config_set_rpc_enable(struct mgos_config *cfg, int         val) {
+  cfg->rpc.enable = val;
+}
+void mgos_config_set_rpc_max_frame_size(struct mgos_config *cfg, int         val) {
+  cfg->rpc.max_frame_size = val;
+}
+void mgos_config_set_rpc_max_queue_length(struct mgos_config *cfg, int         val) {
+  cfg->rpc.max_queue_length = val;
+}
+void mgos_config_set_rpc_default_out_channel_idle_close_timeout(struct mgos_config *cfg, int         val) {
+  cfg->rpc.default_out_channel_idle_close_timeout = val;
+}
+void mgos_config_set_rpc_acl_file(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.acl_file, val);
+}
+void mgos_config_set_rpc_auth_domain(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.auth_domain, val);
+}
+void mgos_config_set_rpc_auth_file(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.auth_file, val);
+}
+void mgos_config_set_rpc_ws_enable(struct mgos_config *cfg, int         val) {
+  cfg->rpc.ws.enable = val;
+}
+void mgos_config_set_rpc_ws_server_address(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.ws.server_address, val);
+}
+void mgos_config_set_rpc_ws_reconnect_interval_min(struct mgos_config *cfg, int         val) {
+  cfg->rpc.ws.reconnect_interval_min = val;
+}
+void mgos_config_set_rpc_ws_reconnect_interval_max(struct mgos_config *cfg, int         val) {
+  cfg->rpc.ws.reconnect_interval_max = val;
+}
+void mgos_config_set_rpc_ws_ssl_server_name(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.ws.ssl_server_name, val);
+}
+void mgos_config_set_rpc_ws_ssl_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.ws.ssl_cert, val);
+}
+void mgos_config_set_rpc_ws_ssl_key(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.ws.ssl_key, val);
+}
+void mgos_config_set_rpc_ws_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.ws.ssl_ca_cert, val);
+}
+void mgos_config_set_rpc_uart_uart_no(struct mgos_config *cfg, int         val) {
+  cfg->rpc.uart.uart_no = val;
+}
+void mgos_config_set_rpc_uart_baud_rate(struct mgos_config *cfg, int         val) {
+  cfg->rpc.uart.baud_rate = val;
+}
+void mgos_config_set_rpc_uart_fc_type(struct mgos_config *cfg, int         val) {
+  cfg->rpc.uart.fc_type = val;
+}
+void mgos_config_set_rpc_uart_dst(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->rpc.uart.dst, val);
+}
+void mgos_config_set_dash_enable(struct mgos_config *cfg, int         val) {
+  cfg->dash.enable = val;
+}
+void mgos_config_set_dash_token(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->dash.token, val);
+}
+void mgos_config_set_dash_server(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->dash.server, val);
+}
+void mgos_config_set_dash_ssl_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->dash.ssl_cert, val);
+}
+void mgos_config_set_dash_ssl_key(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->dash.ssl_key, val);
+}
+void mgos_config_set_dash_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->dash.ssl_ca_cert, val);
+}
+void mgos_config_set_dash_send_logs(struct mgos_config *cfg, int         val) {
+  cfg->dash.send_logs = val;
+}
+void mgos_config_set_http_enable(struct mgos_config *cfg, int         val) {
+  cfg->http.enable = val;
+}
+void mgos_config_set_http_listen_addr(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.listen_addr, val);
+}
+void mgos_config_set_http_document_root(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.document_root, val);
+}
+void mgos_config_set_http_ssl_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.ssl_cert, val);
+}
+void mgos_config_set_http_ssl_key(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.ssl_key, val);
+}
+void mgos_config_set_http_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.ssl_ca_cert, val);
+}
+void mgos_config_set_http_upload_acl(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.upload_acl, val);
+}
+void mgos_config_set_http_hidden_files(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.hidden_files, val);
+}
+void mgos_config_set_http_auth_domain(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.auth_domain, val);
+}
+void mgos_config_set_http_auth_file(struct mgos_config *cfg, const char *val) {
+  mgos_conf_set_str(&cfg->http.auth_file, val);
+}
+void mgos_config_set_mjs_generate_jsc(struct mgos_config *cfg, int         val) {
+  cfg->mjs.generate_jsc = val;
+}
 void mgos_config_set_mqtt_enable(struct mgos_config *cfg, int         val) {
   cfg->mqtt.enable = val;
 }
@@ -1378,297 +1213,6 @@ void mgos_config_set_mqtt1_require_time(struct mgos_config *cfg, int         val
 }
 void mgos_config_set_mqtt1_cloud_events(struct mgos_config *cfg, int         val) {
   cfg->mqtt1.cloud_events = val;
-}
-void mgos_config_set_shadow_enable(struct mgos_config *cfg, int         val) {
-  cfg->shadow.enable = val;
-}
-void mgos_config_set_shadow_lib(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->shadow.lib, val);
-}
-void mgos_config_set_shadow_ota_enable(struct mgos_config *cfg, int         val) {
-  cfg->shadow.ota_enable = val;
-}
-void mgos_config_set_shadow_autocommit(struct mgos_config *cfg, int         val) {
-  cfg->shadow.autocommit = val;
-}
-void mgos_config_set_aws_thing_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->aws.thing_name, val);
-}
-void mgos_config_set_aws_greengrass_enable(struct mgos_config *cfg, int         val) {
-  cfg->aws.greengrass.enable = val;
-}
-void mgos_config_set_aws_greengrass_reconnect_timeout_min(struct mgos_config *cfg, int         val) {
-  cfg->aws.greengrass.reconnect_timeout_min = val;
-}
-void mgos_config_set_aws_greengrass_reconnect_timeout_max(struct mgos_config *cfg, int         val) {
-  cfg->aws.greengrass.reconnect_timeout_max = val;
-}
-void mgos_config_set_sntp_enable(struct mgos_config *cfg, int         val) {
-  cfg->sntp.enable = val;
-}
-void mgos_config_set_sntp_server(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->sntp.server, val);
-}
-void mgos_config_set_sntp_retry_min(struct mgos_config *cfg, int         val) {
-  cfg->sntp.retry_min = val;
-}
-void mgos_config_set_sntp_retry_max(struct mgos_config *cfg, int         val) {
-  cfg->sntp.retry_max = val;
-}
-void mgos_config_set_sntp_update_interval(struct mgos_config *cfg, int         val) {
-  cfg->sntp.update_interval = val;
-}
-void mgos_config_set_azure_enable(struct mgos_config *cfg, int         val) {
-  cfg->azure.enable = val;
-}
-void mgos_config_set_azure_cs(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->azure.cs, val);
-}
-void mgos_config_set_azure_token_ttl(struct mgos_config *cfg, int         val) {
-  cfg->azure.token_ttl = val;
-}
-void mgos_config_set_azure_host_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->azure.host_name, val);
-}
-void mgos_config_set_azure_device_id(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->azure.device_id, val);
-}
-void mgos_config_set_azure_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->azure.cert, val);
-}
-void mgos_config_set_azure_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->azure.key, val);
-}
-void mgos_config_set_azure_enable_cm(struct mgos_config *cfg, int         val) {
-  cfg->azure.enable_cm = val;
-}
-void mgos_config_set_azure_enable_dm(struct mgos_config *cfg, int         val) {
-  cfg->azure.enable_dm = val;
-}
-void mgos_config_set_update_timeout(struct mgos_config *cfg, int         val) {
-  cfg->update.timeout = val;
-}
-void mgos_config_set_update_commit_timeout(struct mgos_config *cfg, int         val) {
-  cfg->update.commit_timeout = val;
-}
-void mgos_config_set_update_url(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->update.url, val);
-}
-void mgos_config_set_update_interval(struct mgos_config *cfg, int         val) {
-  cfg->update.interval = val;
-}
-void mgos_config_set_update_extra_http_headers(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->update.extra_http_headers, val);
-}
-void mgos_config_set_update_ssl_ca_file(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->update.ssl_ca_file, val);
-}
-void mgos_config_set_update_ssl_client_cert_file(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->update.ssl_client_cert_file, val);
-}
-void mgos_config_set_update_ssl_server_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->update.ssl_server_name, val);
-}
-void mgos_config_set_update_enable_post(struct mgos_config *cfg, int         val) {
-  cfg->update.enable_post = val;
-}
-void mgos_config_set_rpc_enable(struct mgos_config *cfg, int         val) {
-  cfg->rpc.enable = val;
-}
-void mgos_config_set_rpc_max_frame_size(struct mgos_config *cfg, int         val) {
-  cfg->rpc.max_frame_size = val;
-}
-void mgos_config_set_rpc_max_queue_length(struct mgos_config *cfg, int         val) {
-  cfg->rpc.max_queue_length = val;
-}
-void mgos_config_set_rpc_default_out_channel_idle_close_timeout(struct mgos_config *cfg, int         val) {
-  cfg->rpc.default_out_channel_idle_close_timeout = val;
-}
-void mgos_config_set_rpc_acl_file(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.acl_file, val);
-}
-void mgos_config_set_rpc_auth_domain(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.auth_domain, val);
-}
-void mgos_config_set_rpc_auth_file(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.auth_file, val);
-}
-void mgos_config_set_rpc_ws_enable(struct mgos_config *cfg, int         val) {
-  cfg->rpc.ws.enable = val;
-}
-void mgos_config_set_rpc_ws_server_address(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.ws.server_address, val);
-}
-void mgos_config_set_rpc_ws_reconnect_interval_min(struct mgos_config *cfg, int         val) {
-  cfg->rpc.ws.reconnect_interval_min = val;
-}
-void mgos_config_set_rpc_ws_reconnect_interval_max(struct mgos_config *cfg, int         val) {
-  cfg->rpc.ws.reconnect_interval_max = val;
-}
-void mgos_config_set_rpc_ws_ssl_server_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.ws.ssl_server_name, val);
-}
-void mgos_config_set_rpc_ws_ssl_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.ws.ssl_cert, val);
-}
-void mgos_config_set_rpc_ws_ssl_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.ws.ssl_key, val);
-}
-void mgos_config_set_rpc_ws_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.ws.ssl_ca_cert, val);
-}
-void mgos_config_set_rpc_azure_enable_dm(struct mgos_config *cfg, int         val) {
-  cfg->rpc.azure.enable_dm = val;
-}
-void mgos_config_set_rpc_gcp_enable(struct mgos_config *cfg, int         val) {
-  cfg->rpc.gcp.enable = val;
-}
-void mgos_config_set_rpc_gcp_subfolder(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.gcp.subfolder, val);
-}
-void mgos_config_set_rpc_mqtt_enable(struct mgos_config *cfg, int         val) {
-  cfg->rpc.mqtt.enable = val;
-}
-void mgos_config_set_rpc_mqtt_pub_topic(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.mqtt.pub_topic, val);
-}
-void mgos_config_set_rpc_mqtt_sub_topic(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.mqtt.sub_topic, val);
-}
-void mgos_config_set_rpc_mqtt_sub_wc(struct mgos_config *cfg, int         val) {
-  cfg->rpc.mqtt.sub_wc = val;
-}
-void mgos_config_set_rpc_mqtt_qos(struct mgos_config *cfg, int         val) {
-  cfg->rpc.mqtt.qos = val;
-}
-void mgos_config_set_rpc_uart_uart_no(struct mgos_config *cfg, int         val) {
-  cfg->rpc.uart.uart_no = val;
-}
-void mgos_config_set_rpc_uart_baud_rate(struct mgos_config *cfg, int         val) {
-  cfg->rpc.uart.baud_rate = val;
-}
-void mgos_config_set_rpc_uart_fc_type(struct mgos_config *cfg, int         val) {
-  cfg->rpc.uart.fc_type = val;
-}
-void mgos_config_set_rpc_uart_dst(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->rpc.uart.dst, val);
-}
-void mgos_config_set_dash_enable(struct mgos_config *cfg, int         val) {
-  cfg->dash.enable = val;
-}
-void mgos_config_set_dash_token(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dash.token, val);
-}
-void mgos_config_set_dash_server(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dash.server, val);
-}
-void mgos_config_set_dash_ssl_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dash.ssl_cert, val);
-}
-void mgos_config_set_dash_ssl_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dash.ssl_key, val);
-}
-void mgos_config_set_dash_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dash.ssl_ca_cert, val);
-}
-void mgos_config_set_dash_send_logs(struct mgos_config *cfg, int         val) {
-  cfg->dash.send_logs = val;
-}
-void mgos_config_set_http_enable(struct mgos_config *cfg, int         val) {
-  cfg->http.enable = val;
-}
-void mgos_config_set_http_listen_addr(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.listen_addr, val);
-}
-void mgos_config_set_http_document_root(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.document_root, val);
-}
-void mgos_config_set_http_ssl_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.ssl_cert, val);
-}
-void mgos_config_set_http_ssl_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.ssl_key, val);
-}
-void mgos_config_set_http_ssl_ca_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.ssl_ca_cert, val);
-}
-void mgos_config_set_http_upload_acl(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.upload_acl, val);
-}
-void mgos_config_set_http_hidden_files(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.hidden_files, val);
-}
-void mgos_config_set_http_auth_domain(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.auth_domain, val);
-}
-void mgos_config_set_http_auth_file(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->http.auth_file, val);
-}
-void mgos_config_set_dns_sd_enable(struct mgos_config *cfg, int         val) {
-  cfg->dns_sd.enable = val;
-}
-void mgos_config_set_dns_sd_host_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dns_sd.host_name, val);
-}
-void mgos_config_set_dns_sd_txt(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->dns_sd.txt, val);
-}
-void mgos_config_set_dns_sd_ttl(struct mgos_config *cfg, int         val) {
-  cfg->dns_sd.ttl = val;
-}
-void mgos_config_set_gcp_enable(struct mgos_config *cfg, int         val) {
-  cfg->gcp.enable = val;
-}
-void mgos_config_set_gcp_server(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.server, val);
-}
-void mgos_config_set_gcp_project(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.project, val);
-}
-void mgos_config_set_gcp_region(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.region, val);
-}
-void mgos_config_set_gcp_registry(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.registry, val);
-}
-void mgos_config_set_gcp_device(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.device, val);
-}
-void mgos_config_set_gcp_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->gcp.key, val);
-}
-void mgos_config_set_gcp_token_ttl(struct mgos_config *cfg, int         val) {
-  cfg->gcp.token_ttl = val;
-}
-void mgos_config_set_gcp_enable_config(struct mgos_config *cfg, int         val) {
-  cfg->gcp.enable_config = val;
-}
-void mgos_config_set_gcp_enable_commands(struct mgos_config *cfg, int         val) {
-  cfg->gcp.enable_commands = val;
-}
-void mgos_config_set_provision_btn_pin(struct mgos_config *cfg, int         val) {
-  cfg->provision.btn.pin = val;
-}
-void mgos_config_set_provision_btn_pull_up(struct mgos_config *cfg, int         val) {
-  cfg->provision.btn.pull_up = val;
-}
-void mgos_config_set_provision_btn_hold_ms(struct mgos_config *cfg, int         val) {
-  cfg->provision.btn.hold_ms = val;
-}
-void mgos_config_set_provision_led_pin(struct mgos_config *cfg, int         val) {
-  cfg->provision.led.pin = val;
-}
-void mgos_config_set_provision_led_active_high(struct mgos_config *cfg, int         val) {
-  cfg->provision.led.active_high = val;
-}
-void mgos_config_set_provision_stable_state(struct mgos_config *cfg, int         val) {
-  cfg->provision.stable_state = val;
-}
-void mgos_config_set_provision_timeout(struct mgos_config *cfg, int         val) {
-  cfg->provision.timeout = val;
-}
-void mgos_config_set_provision_max_state(struct mgos_config *cfg, int         val) {
-  cfg->provision.max_state = val;
 }
 void mgos_config_set_wifi_ap_enable(struct mgos_config *cfg, int         val) {
   cfg->wifi.ap.enable = val;
@@ -1837,54 +1381,6 @@ void mgos_config_set_wifi_sta_cfg_idx(struct mgos_config *cfg, int         val) 
 }
 void mgos_config_set_wifi_sta_connect_timeout(struct mgos_config *cfg, int         val) {
   cfg->wifi.sta_connect_timeout = val;
-}
-void mgos_config_set_spi_enable(struct mgos_config *cfg, int         val) {
-  cfg->spi.enable = val;
-}
-void mgos_config_set_spi_debug(struct mgos_config *cfg, int         val) {
-  cfg->spi.debug = val;
-}
-void mgos_config_set_spi_miso_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.miso_gpio = val;
-}
-void mgos_config_set_spi_mosi_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.mosi_gpio = val;
-}
-void mgos_config_set_spi_sclk_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.sclk_gpio = val;
-}
-void mgos_config_set_spi_cs0_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.cs0_gpio = val;
-}
-void mgos_config_set_spi_cs1_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.cs1_gpio = val;
-}
-void mgos_config_set_spi_cs2_gpio(struct mgos_config *cfg, int         val) {
-  cfg->spi.cs2_gpio = val;
-}
-void mgos_config_set_watson_enable(struct mgos_config *cfg, int         val) {
-  cfg->watson.enable = val;
-}
-void mgos_config_set_watson_host_name(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.host_name, val);
-}
-void mgos_config_set_watson_client_id(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.client_id, val);
-}
-void mgos_config_set_watson_token(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.token, val);
-}
-void mgos_config_set_watson_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.cert, val);
-}
-void mgos_config_set_watson_key(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.key, val);
-}
-void mgos_config_set_watson_ca_cert(struct mgos_config *cfg, const char *val) {
-  mgos_conf_set_str(&cfg->watson.ca_cert, val);
-}
-void mgos_config_set_mjs_generate_jsc(struct mgos_config *cfg, int         val) {
-  cfg->mjs.generate_jsc = val;
 }
 void mgos_config_set_board_led1_pin(struct mgos_config *cfg, int         val) {
   cfg->board.led1.pin = val;
